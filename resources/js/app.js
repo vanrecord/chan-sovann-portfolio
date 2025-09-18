@@ -32,9 +32,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const i18n = createI18n({
   legacy: false,
-  locale: "en",
-  fallbackLocale: "en",
-  fallbackRoot: "en",
+  locale: localStorage.getItem('lang')?.toLowerCase()??'en',
+  fallbackLocale: localStorage.getItem('lang')?.toLowerCase()??'en',
+  fallbackRoot: localStorage.getItem('lang')?.toLowerCase()??'en',
   messages: lang,
 });
 
@@ -56,12 +56,6 @@ createInertiaApp({
             .component("Head",Head)
             .mixin({ methods: { route } })
             .mixin({methods:{
-              // route:function (route) {
-              //   console.log(route);
-              //   // console.log(this.$page.props.tenant_id);
-              //   console.log(this.$page.props.tenant_id+'/'+route);
-              //   // return this.$page.props.tenant_id+'/'+route;
-              // },
               getLang: function(){
                 return localStorage.getItem('lang')?.toLowerCase()??'en';
               },
@@ -94,6 +88,15 @@ createInertiaApp({
                   if(allPermissions[item]) hasPermission = true;     
                 });
                 return hasPermission;
+              },
+              changeLang: function (lang){
+                  this.$root.$i18n.locale = lang.toLowerCase();
+                  this.$root.$i18n.fallbackLocale = lang.toLowerCase();
+                  this.$root.$i18n.fallbackRoot = lang.toLowerCase();
+
+                  this.$inertia.get(route('change-language',lang), {
+                        preserveScroll:true,
+                    })
               },
 
               menuPermission: function (permissions, restrict) {          

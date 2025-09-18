@@ -1,8 +1,6 @@
 <template>
 <div>
-
     <Head :title="title" />
-
     <nav class="container mx-auto min-h-screen w-full">
         <div class="fixed static w-full sticky top-0 z-30">
             <nav-bar />

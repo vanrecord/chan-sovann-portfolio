@@ -1,12 +1,12 @@
 <template>
-  <header class="static fixed relative bg-[#d6d3d1] dark:bg-darker shadow-md fixed top-0 left-0 w-full z-50">
+  <!-- class: relative -->
+  <header class=" static fixed bg-[#d6d3d1] dark:bg-darker shadow-md fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20 items-center">
         <!-- Logo / Name -->
         <div @click="goTo('Home')" class="flex justify-start text-left cursor-pointer">
-          <h1 class="text-2xl md:text-3xl font-marker title-me">Chan Sovann</h1>
+          <h1 class="text-2xl md:text-3xl font-marker title-me">{{$tm('Chan Sovann')}}</h1>
         </div>
-
         <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-6">
           <nav class="flex space-x-4">
@@ -21,7 +21,7 @@
                   : 'text-gray-700 dark:text-gray-200 hover:text-[#0294BA]'
               ]"
             >
-              {{ item.name }}
+              {{ $tm(item.name) }}
             </button>
           </nav>
         </div>
@@ -74,7 +74,7 @@
               : 'text-gray-700 dark:text-gray-200 hover:text-[#0294BA]'
           ]"
         >
-          {{ item.name }}
+          {{ $tm(item.name) }}
         </button>
 
         <!-- Social Media Mobile -->
@@ -115,6 +115,7 @@ export default {
         { label: 'EN', key: 'EN', value: 'US' },
         { label: 'KH', key: 'KM', value: 'KH' }
       ],
+      value: ref(localStorage.getItem('lang')??'EN'),
       open: false,
       activeMenu: 'Home',
       menuItems: [
@@ -126,6 +127,12 @@ export default {
         { name: 'Contact', action: 'Contact' }
       ]
     }
+  },
+  watch: {
+      'value': function (newValue) {
+          localStorage.setItem('lang', newValue)
+          this.changeLang(newValue)
+      }
   },
   mounted() {
     window.addEventListener('resize', this.handleResize)

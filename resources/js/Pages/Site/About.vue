@@ -4,7 +4,7 @@
         <div class="relative h-screen w-full">
             <div class="flex static mb-4 flex-wrap w-full z-10 absolute top-3">
                 <div class="pb-2 w-full text-xl uppercase font-medium text-blue-700"></div>
-                    Hello dfvsfsrfsr
+                    Hello About
             </div>
         </div>
     </div>  

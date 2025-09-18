@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ApKKnTwcs5_ccclapPXdBg.jpeg" />
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->

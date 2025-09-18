@@ -8,6 +8,12 @@
             <About />
             <div id="skills"></div>
             <Skills />
+            <div id="resume"></div>
+            <Resume />
+            <div id="achievements"></div>
+            <Achievements />
+            <div id="contact"></div>
+            <Contact />
             <!-- <Social
                 :socials="socials"
                 :list_status="list_status"
@@ -24,6 +30,9 @@ import SiteAuthLayout from '@/Layouts/SiteAuthLayout.vue'
 import Home from '@/Pages/Site/Home.vue'
 import About from '@/Pages/Site/About.vue'
 import Skills from '@/Pages/Site/Skills.vue'
+import Resume from '@/Pages/Site/Resume.vue'
+import Achievements from '@/Pages/Site/Achievements.vue'
+import Contact from '@/Pages/Site/Contact.vue'
 import { useI18n } from "vue-i18n";
 import { lang } from "@/Lang";
 import JetDropdown from '@/Components/Dropdown.vue'
@@ -59,7 +68,10 @@ export default defineComponent({
         LinkIcon,
         Home,
         About,
-        Skills
+        Skills,
+        Resume,
+        Achievements,
+        Contact
     },
     setup() {
         const { tm } = useI18n({

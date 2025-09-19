@@ -1,5 +1,5 @@
 <template>
-<section >
+<section id="about">
     <div class="py-4">
         <div class="relative h-screen w-full">
             <div class="flex static mb-4 flex-wrap w-full z-10 absolute top-3">

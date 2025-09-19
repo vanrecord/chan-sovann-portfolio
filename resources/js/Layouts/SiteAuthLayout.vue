@@ -10,13 +10,23 @@
                 <slot></slot>
             </main>
         </div>
+        <div>
+        <!-- Scroll to Home Button -->
+        <button
+          v-show="showButton"
+          @click="scrollToHome"
+          class="fixed bottom-6 right-6 p-3 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition"
+        >
+          <i class="fas fa-home"></i>
+        </button>
+  </div>
     </nav>
 </div>
 </template>
 
 <script>
 import {
-    defineComponent
+    defineComponent,ref
 } from 'vue'
 import {
     isDark,
@@ -47,13 +57,28 @@ export default defineComponent({
             tm
         }
     },
+    mounted() {
+        window.addEventListener("scroll", this.handleScroll);
+    },
     data() {
         return {
             showingNavigationDropdown: false,
+            showButton : ref(false),
             isDark: {
                 isDark
             }.isDark
         }
     },
+    methods: {
+        scrollToHome(){
+            const home = document.getElementById("homepage");
+            if (home) {
+                home.scrollIntoView({ behavior: "smooth" });
+            }
+        },
+        handleScroll(){
+            this.showButton = window.scrollY > 200;
+        }
+    }
 })
 </script>

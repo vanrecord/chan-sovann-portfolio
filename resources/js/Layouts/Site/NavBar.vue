@@ -159,6 +159,9 @@ export default {
       const id = map[screen]
       const el = document.getElementById(id)
       if (el) {
+        el.classList.remove('animate-fadeIn')
+        void el.offsetWidth
+        el.classList.add('animate-fadeIn')
         const headerHeight = document.querySelector('header').offsetHeight
         const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight
         window.scrollTo({ top, behavior: 'smooth' })

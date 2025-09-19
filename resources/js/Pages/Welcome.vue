@@ -2,17 +2,11 @@
     <div>
         <Head title="Sovann Chan" />
         <div class="px-4 py-4">
-            <div id="homepage"></div>
             <Home />
-            <div id="about"></div>
             <About />
-            <div id="skills"></div>
             <Skills />
-            <div id="resume"></div>
             <Resume />
-            <div id="achievements"></div>
             <Achievements />
-            <div id="contact"></div>
             <Contact />
             <!-- <Social
                 :socials="socials"

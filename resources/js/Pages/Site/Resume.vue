@@ -1,9 +1,9 @@
 <template>
-<section >
+<section id="resume">
     <div class="py-20">
         <div class="relative h-screen w-full">
             <div class="flex static mb-4 flex-wrap w-full z-20 absolute top-3">
-                <div class="w-1/2">
+                <div class="w-1/2 opacity-0 animate-fadeIn">
                     <div class="py-2">
                         <p class="mt-2 font-engraving">I build modern, clean, and functional web apps.</p>
                         <p class="mt-2 font-engraving">Building with Laravel, PHP, Vue, React and modern JS.</p>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2">
+                <div class="w-1/2 opacity-0 animate-fadeIn">
                     <div class="text-3xl font-caveat md:text-3xl font-bold text-[#808A80]">
                         <div>
                             <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ApKKnTwcs5_ccclapPXdBg.jpeg">

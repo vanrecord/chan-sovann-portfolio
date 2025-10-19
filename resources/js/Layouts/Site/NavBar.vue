@@ -29,16 +29,13 @@
         <div class="hidden lg:flex items-center space-x-6">
           <!-- Social Media -->
           <div class="flex space-x-3 ml-4">
-            <a href="https://instagram.com" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-pink-500">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700">
+            <a href="https://x.com/sovann1534056?s=21" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://t.me/username" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-400">
+            <a href="https://t.me/SovannDavann02" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700">
               <i class="fab fa-telegram-plane"></i>
             </a>
-            <a href="https://github.com/vanrecord" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-gray-900">
+            <a href="https://github.com/vanrecord" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700">
               <i class="fab fa-github"></i>
             </a>
           </div>
@@ -136,6 +133,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.handleResize)
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     toggleMenu() {
@@ -144,7 +142,7 @@ export default {
     setActive(name) {
       this.activeMenu = name
     },
-    handleResize() {
+    handleResize() {console.log(999)
       this.open = window.innerWidth >= 1024
     },
     goTo(screen) {
@@ -166,6 +164,30 @@ export default {
         const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight
         window.scrollTo({ top, behavior: 'smooth' })
       }
+    },
+    handleScroll() {
+      const sections = [
+        { id: 'homepage', name: 'Home' },
+        { id: 'about', name: 'About' },
+        { id: 'skills', name: 'Skills' },
+        { id: 'resume', name: 'Resume' },
+        { id: 'achievements', name: 'Achievements' },
+        { id: 'contact', name: 'Contact' }
+      ]
+
+      const scrollY = window.scrollY
+      const offset = document.querySelector('header')?.offsetHeight || 80
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i].id)
+        if (section) {
+          const top = section.offsetTop - offset - 100
+          if (scrollY >= top) {
+            this.activeMenu = sections[i].name
+            break
+          }
+        }
+     }
     }
   }
 }

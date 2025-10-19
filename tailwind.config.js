@@ -18,6 +18,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or false
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(109,189,128,1) 39%, rgba(84,161,176,1) 74%)',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },

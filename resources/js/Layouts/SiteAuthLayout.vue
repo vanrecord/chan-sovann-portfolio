@@ -1,7 +1,7 @@
 <template>
-<div>
+<div >
     <Head :title="title" />
-    <nav class="container mx-auto min-h-screen w-full">
+    <nav class="container mx-auto min-h-screen w-full ">
         <div class="fixed static w-full sticky top-0 z-30">
             <nav-bar />
         </div>
@@ -9,13 +9,35 @@
             <main>
                 <slot></slot>
             </main>
+            <footer id="footer" class="footer p-4 bg-gray-50">
+                <div class="container">
+                <div class="copyright text-center ">
+                    <p>© <span>Copyright</span> <strong class="px-1 sitename">Chan Sovann - Portfolio</strong> <span>All Rights Reserved</span></p>
+                </div>
+                <div class="flex justify-center">
+                    <a href="https://x.com/sovann1534056?s=21" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700 border-2 rounded-full p-2 mr-2">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://t.me/SovannDavann02" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700 border-2 rounded-full p-2 mr-2">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="https://github.com/vanrecord" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-700 border-2 rounded-full p-2">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="text-center">
+                    Designed by <a href="/">Chan Sovann</a>
+                </div>
+                </div>
+
+            </footer>
         </div>
         <div>
         <!-- Scroll to Home Button -->
         <button
           v-show="showButton"
           @click="scrollToHome"
-          class="fixed bottom-6 right-6 p-3 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition"
+          class="fixed bottom-6 right-6 p-3 bg-[#0294BA] text-white rounded-full shadow-lg hover:bg-[#33ccff] transition"
         >
           <i class="fas fa-home"></i>
         </button>

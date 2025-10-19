@@ -51,7 +51,12 @@ createInertiaApp({
             .use(Plugin)
             .use(VCalendar)
             .use(setupCalendar, {})
-            .use(Toast)
+            .use(Toast,{
+              position: 'top-right',
+              timeout: 2000,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true})
             .use(VueSweetalert2)
             .component("Head",Head)
             .mixin({ methods: { route } })

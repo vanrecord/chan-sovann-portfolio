@@ -13,11 +13,11 @@
                     <p class="mt-2 font-engraving">Building with Laravel, PHP, Vue, React and modern JS.</p>
                     </div>
                     <div class="flex flex-wrap justify-center md:justify-start w-full opacity-0 animate-fadeIn">
-                    <div class="w-1/3 text-center border-2 bg-[#0294BA] text-white rounded-2xl m-2 p-2">
+                    <div class="w-1/3 text-center border-2 bg-gradient-to-br from-purple-400 via-purple-400 to-blue-400 text-white rounded-2xl m-2 p-2">
                         <p class="font-bold text-2xl md:text-3xl">5+</p>
                         <label class="text-lg sm:text-sm md:2xl">Years Experience</label>
                     </div>
-                    <div class="w-1/3 text-center border-2 bg-[#0294BA] text-white rounded-2xl m-2 p-2">
+                    <div class="w-1/3 text-center border-2 bg-gradient-to-br from-purple-400 via-purple-400 to-blue-400 text-white rounded-2xl m-2 p-2">
                         <p class="font-bold text-2xl md:text-3xl">7+</p>
                         <label class="text-lg sm:text-sm md:2xl">Projects Completed</label>
                     </div>

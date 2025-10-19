@@ -49,7 +49,6 @@
         "agora-rtc-sdk-ng": "^4.18.2",
         "autoprefixer": "10.4.5",
         "browser-downloads": "^0.2.0",
-        "canvas": "^2.11.2",
         "chart.js": "^4.4.2",
         "dayjs": "^1.11.3",
         "face-api.js": "^0.22.2",

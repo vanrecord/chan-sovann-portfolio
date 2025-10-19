@@ -10,6 +10,7 @@ use App\Models\Tenant;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use App\Actions\ContactMail;
+use App\Actions\ReplyMail;
 use Illuminate\Support\Facades\Validator;
 
 class SendMailController extends Controller
@@ -27,7 +28,8 @@ class SendMailController extends Controller
             'message' =>['required'],
             'email' => ['required', 'string', 'email', 'max:255'],
         ])->validate();
-        $my_email = 'vanrecord1122@gmail.com';
+        $my_email = env('MAIL_USERNAME');
         Mail::to($my_email)->send(new ContactMail($datas));
+        Mail::to($datas['email'])->send(new ReplyMail($datas));
     }
 }

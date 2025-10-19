@@ -1,6 +1,6 @@
 <template>
 <section id="resume">
-    <div class="py-20 bg-[#fcf8f8]">
+    <div class="py-20">
         <div class="container mx-auto flex flex-col items-center">
             <!-- Heading -->
             <div class="pb-4 w-full text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center">
